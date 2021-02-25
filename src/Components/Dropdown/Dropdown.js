@@ -8,6 +8,10 @@ const race = [
   "Woodland Elf"
 ];
 
+import React, { Component } from "react";
+
+import "./Dropdown.less";
+
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
