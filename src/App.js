@@ -6,6 +6,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+import Dropdown from "./Components/Dropdown/Dropdown.js";
+
 import "./style.css";
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
             Let Google help apps determine location. This means sending
             anonymous location data to Google, even when no apps are running.
           </DialogContentText>
+          <DialogContentText id="alert-dialog-dropdown" />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">

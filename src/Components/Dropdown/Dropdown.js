@@ -64,3 +64,5 @@ class Dropdown extends React.Component {
     return <div className="dropdown__items"> {list} </div>;
   };
 }
+
+export default Dropdown;
