@@ -17,14 +17,24 @@ class Dropdown extends React.Component {
   render() {
     const { isOpen, haveText } = this.state;
 
+    let dropdownText = "";
+
+    if (isOpen) {
+      dropdownText = "Select Race";
+    } else {
+      dropdownText = haveText;
+    }
+
+    if (!haveText) {
+      dropdownText = "Select Race";
+    }
+
     return (
       <div
         className={isOpen ? "dropdown active" : "dropdown"}
         onClick={this.handleClick}
       >
-        <div className="dropdown__text">
-          {!haveText ? "Select Race" : haveText}
-        </div>
+        <div className="dropdown__text">{dropdownText}</div>
         {this.itemList(race)}
       </div>
     );
