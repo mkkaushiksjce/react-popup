@@ -1,12 +1,4 @@
-const race = [
-  "Azure Female",
-  "Iron Dwarf",
-  "Highborn Human",
-  "Lowland Human",
-  "Mountain Dwarf",
-  "Scythian Elf",
-  "Woodland Elf"
-];
+const race = ["Azure Female", "Iron Dwarf"];
 
 import React, { Component } from "react";
 

@@ -40,7 +40,9 @@ function App() {
             Let Google help apps determine location. This means sending
             anonymous location data to Google, even when no apps are running.
           </DialogContentText>
-          <DialogContentText id="alert-dialog-dropdown" />
+          <DialogContentText id="alert-dialog-dropdown">
+            <Dropdown />
+          </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
