@@ -1,43 +1,40 @@
 // This is my simple comment
 
-import React, {Component} from 'react';
-
-import './FileDownload.css';
+import React, { Component } from "react";
 
 class FileDownload extends React.Component {
-	
-	constructor(props) {
-		super(props);
-	}
-	
-	downloadEmployeeData = () => {
-        // Dummy url for Test	
-		fetch('http://localhost:8080/employees/download')
-			.then(response => {
-				response.blob().then(blob => {
-					let url = window.URL.createObjectURL(blob);
-					let a = document.createElement('a');
-					a.href = url;
-					a.download = 'employees.json';
-					a.click();
-				});
-				//window.location.href = response.url;
-		});
-	}
-	
-	render() {
-		return (
-			<div id="container">
-				<h1>Download File using React App</h1>
-				<h3>Download Employee Data using Button</h3>
-				<button onClick={this.downloadEmployeeData}>Download</button>
-				<p/>
-				<h3>Download Employee Data using Link</h3>
-				<a href="#" onClick={this.downloadEmployeeData}>Download</a>
-			</div>
-		)
-	}
+  constructor(props) {
+    super(props);
+  }
 
+  downloadFile = () => {
+    // Dummy url for Test
+
+    const data = {
+      a: "111",
+      b: "222",
+      c: "333"
+    };
+
+    let linkElement = document.createElement("a");
+    linkElement.href = URL.createObjectURL(
+      new Blob([JSON.stringify(data, null, 2)], {
+        type: "application/json"
+      })
+    );
+    linkElement.setAttribute("download", "data.json");
+    document.body.appendChild(a);
+    linkElement.click();
+    document.body.removeChild(a);
+  };
+
+  render() {
+    return (
+      <div id="container">
+        <button onClick={this.downloadEmployeeData}>Download</button>
+      </div>
+    );
+  }
 }
 
 export default FileDownload;

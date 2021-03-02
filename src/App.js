@@ -9,6 +9,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import IconButton from "@material-ui/core/IconButton";
 
 import Dropdown from "./Components/Dropdown/Dropdown.js";
+import FileDownload from "./Components/FileDownload/FileDownload.js";
 
 import "./style.css";
 
@@ -28,6 +29,7 @@ function App() {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open alert dialog
       </Button>
+      <FileDownload />
       <Dialog open={open} onClose={handleClose}>
         <IconButton id="closeIcon" onClick={handleClose}>
           <CloseIcon />
