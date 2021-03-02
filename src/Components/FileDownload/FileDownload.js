@@ -10,28 +10,27 @@ class FileDownload extends React.Component {
   downloadFile = () => {
     // Dummy url for Test
 
-    const data = {
-      a: "111",
-      b: "222",
-      c: "333"
-    };
+    var data = { x: 42, s: "hello, world", d: new Date() };
+    var fileName = "my-download.json";
 
-    let linkElement = document.createElement("a");
-    linkElement.href = URL.createObjectURL(
-      new Blob([JSON.stringify(data, null, 2)], {
-        type: "application/json"
-      })
-    );
-    linkElement.setAttribute("download", "data.json");
+    var json = JSON.stringify(data);
+    var blob = new Blob([json], { type: "octet/stream" });
+    var url = window.URL.createObjectURL(blob);
+
+    var a = document.createElement("a");
     document.body.appendChild(a);
-    linkElement.click();
-    document.body.removeChild(a);
+    a.style = "display: none";
+
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    window.URL.revokeObjectURL(url);
   };
 
   render() {
     return (
       <div id="container">
-        <button onClick={this.downloadEmployeeData}>Download</button>
+        <button onClick={this.downloadFile}>Download</button>
       </div>
     );
   }
