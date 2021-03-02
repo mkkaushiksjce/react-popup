@@ -24,37 +24,38 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="modal-popup">
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open alert dialog
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <IconButton aria-label="close" onClick={handleClose}>
+      <Dialog open={open} onClose={handleClose}>
+        <IconButton id="closeIcon" onClick={handleClose}>
           <CloseIcon />
         </IconButton>
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id="alertDialogTitle">
           {"Use Google's location service?"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
+          <DialogContentText id="alertDialogDescription">
             Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
-          <DialogContentText id="alert-dialog-dropdown">
-            <Dropdown />
+            anonymous location data to Google
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Disagree
+          <Button
+            className="modal-buttons"
+            onClick={handleClose}
+            color="primary"
+          >
+            Download
           </Button>
-          <Button onClick={handleClose} color="primary" autoFocus>
-            Agree
+          <Button
+            className="modal-buttons"
+            onClick={handleClose}
+            color="primary"
+            autoFocus
+          >
+            Cancel
           </Button>
         </DialogActions>
       </Dialog>

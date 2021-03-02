@@ -1,3 +1,53 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+
+.MuiDialogActions-root {
+  justify-content: center;
+}
+
+.MuiIconButton-label {
+  display: inline !important;
+}
+
+.MuiDialog-paperWidthSm {
+  display: inline;
+  padding: 30px;
+}
+
+.MuiTypography-root {
+  text-align: center;
+}
+
+.MuiDialog-container .MuiTypography-h6 {
+  font-size: 22px;
+}
+
+.MuiDialog-container .MuiSvgIcon-root {
+  font-size: 2rem;
+}
+
+.MuiDialogActions-root .MuiButton-root {
+  border: 1px solid #cedfea;
+  border-radius: 0;
+  width: 100px;
+  text-transform: capitalize;
+  background: #005691;
+  color: white;
+}
+
+.MuiButton-root:nth-child(even) {
+  background: white;
+  color: #005691;
+}
+
+.MuiDialogActions-root .MuiDialogActions-spacing {
+  margin-top: 30px;
+}
+
+#closeIcon {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
